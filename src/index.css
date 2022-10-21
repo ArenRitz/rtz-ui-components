@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.gradient-animation {
+  background: linear-gradient(45deg, #85e1fd 0%, #f665ea 100%);
+  background-size: 200% 200%;
+  
+  animation: gradient-out 0.5s forwards, shadow-out 0.5s forwards;
+  
+}
+.gradient-animation:hover {
+  /* animate gradient once and remain at end keyframe */
+  animation: gradient-in 0.5s forwards, shadow-in 0.5s forwards;
+
+}
+
+
+
+@keyframes gradient-in {
+	0% {
+		background-position: 0% 50%;
+	}
+	100% {
+		background-position: 100% 50%;
+	}
+}
+
+@keyframes gradient-out {
+	0% {
+    background-position: 100% 50%;
+	}
+	100% {
+    background-position: 0% 50%;
+	}
+}
+
+
+@keyframes shadow-in {
+  0% {
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+}
+
+@keyframes shadow-out {
+  0% {
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0);
+  }
+  
+}
